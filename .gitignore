@@ -1,1 +1,9 @@
-**/*.env
+# Ignore the Python virtual environment folder
+env-1/
+
+# Ignore any local environment files if you create them later
+**/.env
+
+# Ignore Python cache files generated during execution
+**/__pycache__/
+*.py[cod]
