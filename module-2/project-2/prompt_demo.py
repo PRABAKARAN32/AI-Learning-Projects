@@ -1,16 +1,8 @@
-import os
 from langchain_core.prompts import ChatPromptTemplate, PromptTemplate
-from langchain_google_genai import ChatGoogleGenerativeAI
-from dotenv import load_dotenv
 
+from connect_llm import connect_gemini 
 
-load_dotenv()
-GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
-
-llm = ChatGoogleGenerativeAI(
-    model="gemini-2.5-flash",
-    api_key=GOOGLE_API_KEY
-)
+llm = connect_gemini()
 
 def single_prompt_demo():
     print("\n--- PromptTemplete ---")
