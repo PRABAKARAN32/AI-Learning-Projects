@@ -1,6 +1,7 @@
 # Ignore the Python virtual environment folder
 env-1/
 **/demo-*
+**/venv
 
 # Ignore any local environment files if you create them later
 **/.env
