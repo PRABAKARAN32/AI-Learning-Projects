@@ -1,3 +1,261 @@
 System: You are the helpful assistant to solve the coding problem that is given by the user by providing the step-by-step instruction.
 
 User: Hi there, I need to solve the 'Find the Second Largest Element in the Given Array' problem using the given array. In that there is a condition: if there are 2 elements of the array that are with the same length, then I need to return the smallest element.
+
+
+
+
+
+Question 1
+You are building a form using both Formik and Yup libraries, where one of the inputs is an email. Here are this input’s client validation rules:
+
+It has to be a valid email address.
+
+If the email input is invalid, a message  “Invalid email address” will be displayed.
+
+If the email input is blank, a message “Required” will be shown.
+
+Based on the above requirements, choose the correct Yup validation code from the provided options.
+
+options: 
+Yup.email("Invalid email address").required("Required").
+
+Yup.string().email("Invalid email address").required("Required")
+
+Yup.email().string("Invalid email address").required("Required")
+
+2.
+Question 2
+You have the following React application where you have a ToDo component that has two text labels and an uncontrolled text input and the entry point App component that renders a list of two ToDos and a button to reverse the order of the ToDos. To avoid a React keys warning, a key is provided to each ToDo component, with the index as its value. Suppose that the next sequence of events happen in the application:
+
+1. You write “Wash dishes” in the first ToDo  input
+
+2. You write “Buy groceries” in the second ToDo  input
+
+3. You click the button to reverse the order
+
+What would happen on the screen after that?
+
+code:
+
+const ToDo = props => (
+  <tr>
+    <td>
+      <label>{props.id}</label>
+    </td>
+    <td>
+      <input />
+    </td>
+    <td>
+      <label>{props.createdAt}</label>
+    </td>
+  </tr>
+);
+
+
+function App() {
+  const [todos, setTodos] = useState([
+    {
+      id: 'todo1',
+      createdAt: '18:00',
+    }, 
+    {
+      id: 'todo2',
+      createdAt: '20:30',
+    }
+  ]);
+
+  const reverseOrder = () => {
+    // Reverse is a mutative operation, so we need to create a new array first.
+    setTodos([...todos].reverse());
+  };
+
+  return (
+    <div>
+      <button onClick={reverseOrder}>Reverse</button>
+      {todos.map((todo, index) => (
+        <ToDo key={index} id={todo.id} createdAt={todo.createdAt} />
+      ))}
+    </div>
+  );
+}
+
+option
+
+
+todo2 Wash dishes 20:30
+
+todo1 Buy groceries 18:00
+
+todo1 Buy groceries 18:00
+
+todo2 Wash dishes 20:30
+
+todo2 Buy groceries 20:30
+
+todo1 Wash dishes 18:00
+
+3.
+Question 3
+Consider the code below, and choose the correct sentence about this code.
+
+code: 
+import{ createContext, useContext, useState} from"react";
+
+const ThemeContext = createContext(undefined);
+
+export const ThemeProvider= () => {
+  const[theme, setTheme] = useState("light");
+
+  return(
+    <ThemeContext.Provider
+      value={{
+        theme,
+        toggleTheme: () => setTheme(!theme),
+      }}
+    >
+    </ThemeContext.Provider>
+  );
+};
+
+options
+
+This code has one or more errors in it, and thus needs to be fixed.
+
+This code doesn’t have an error and can be ran as is, without errors.
+
+4.
+Question 4
+True or False: A tree of elements cannot mix and match both components and DOM elements as the type property.
+
+options:
+
+True
+
+False.
+
+5.
+Question 5
+True or false: When the Submit button is clicked, the code below will output the words “WithClick” to the console.
+
+const Button = ({ children, ...rest }) => (
+  <button onClick={() => console.log("ButtonClick")} {...rest}>
+    {children}
+  </button>
+);
+
+const withClick = (Component) => {
+  const handleClick = () => {
+    console.log("WithClick");
+  };
+
+  return(props) => {
+    return<Component {...props} onClick={handleClick} />;
+  };
+};
+
+const MyButton = withClick(Button);
+
+export default function App() {
+  return <MyButton onClick={() => console.log("AppClick")}>Submit</MyButton>;
+}
+
+options:
+
+True
+
+False
+
+6.
+Question 6
+
+When writing a test for a React component using jest and react-testing-library, how would you assert that a function has been called with some specific arguments?
+
+options:
+Using the toHaveBeenCalledWith matcher.
+
+Using the toHaveAttribute matcher.
+
+Using the toHaveBeenCalled matcher.
+
+7.
+Question 7
+Is the following piece of code a valid implementation of the render props pattern?
+
+<MealProvider render={data => (
+  <p>Ingredients: {data.ingredients}</p>
+)}/>
+
+options:
+Yes
+
+No
+
+8) What do you need to add to this code to make the useEffect run only once?
+
+code:
+React.useEffect(()=> {
+ console.log('The value of the person variable is', person)
+})
+
+options
+
+Move the console.log outside of the arrow function 
+
+Add an empty dependency array.
+
+Move the console.log outside of the useEffect function 
+
+9.
+Question 9
+You are given the below piece of code.
+
+code:
+
+import {useState} from "react";
+
+export default function App() {
+  const [restaurantName, setRestaurantName] = useState("Lemon");
+
+  function updateRestaurantName() {
+    setRestaurantName("Little Lemon");
+  };
+
+  return (
+    <div>
+      <h1>{restaurantName}</h1>
+      <button onClick={updateRestaurantName}>
+        Update restaurant name
+      </button>
+    </div>
+  );
+};
+
+True or false: The restaurantName variable's value will always be reset between re-renders of the App component.
+
+True 
+
+False 
+
+1 point
+10.
+Question 10
+
+The below code is not valid, because:
+
+if (data !== '') {
+  useEffect(() => {
+    setData('test data');
+  });
+}
+
+options:
+
+You're breaking the rules of hooks. 
+
+You're using the if statement wrong. 
+
+You're using the arrow function wrong. 
+
+There's a typo in the arrow function. 
+
